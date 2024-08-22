@@ -1,0 +1,28 @@
+.account {
+  padding: 10px;
+  background-color: #fefae0;
+  display: grid;
+  grid-template-columns: 100px 1fr 1fr;
+  align-items: center;
+}
+
+.account_img img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.accountInfo h4 {
+  font-weight: 500;
+}
+
+.accountInfo p {
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.accountExpandButton {
+  display: flex;
+  justify-content: center;
+}
