@@ -1,0 +1,30 @@
+.chatBoxHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #fefae0;
+  border-bottom: 2px solid #ccd5ae;
+}
+
+.chatBoxHeader .headerInfo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.chatBoxHeader .headerInfo img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.chatBoxHeader .headerInfo h4 {
+  font-weight: 500;
+}
+
+.chatBoxHeader .headerButton {
+  padding: 0 50px;
+}

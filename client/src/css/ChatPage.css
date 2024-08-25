@@ -5,5 +5,11 @@
 }
 
 .chatPageLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.chatPageLeft,
+.chatPageRight {
   height: 100%;
 }

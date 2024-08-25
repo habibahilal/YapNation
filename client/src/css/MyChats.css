@@ -1,7 +1,7 @@
 .chats {
   padding: 10px;
   background-color: #fefae0;
-  height: 100%;
+  flex-grow: 1;
 }
 
 .chatsHeader {
@@ -41,6 +41,7 @@
   grid-template-columns: 100px 1fr;
   align-items: center;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .chat img {

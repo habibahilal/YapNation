@@ -1,13 +1,12 @@
 import "../../css/MyChats.css";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { ChatState } from "../../context/ChatProvider";
 import axios from "axios";
 import { getSender } from "../../config/ChatLogics";
 import GroupChatModal from "../misc/GroupChatModal";
 
 const MyChats = () => {
-  const { user, setUser, selectedChat, setSelectedChat, chats, setChats } =
-    ChatState();
+  const { user, setSelectedChat, chats, setChats, fetchAgin } = ChatState();
 
   const fetchChats = async () => {
     try {
@@ -29,7 +28,8 @@ const MyChats = () => {
 
   useEffect(() => {
     fetchChats();
-  }, [user]);
+    // eslint-disable-next-line
+  }, [user, fetchAgin]);
 
   return (
     <div className="chats">
@@ -52,6 +52,7 @@ const MyChats = () => {
                   ? getSender(user, chat.users).profilePic
                   : chat.groupAdmin.profilePic
               }
+              alt="profile"
             />
             <div className="chatInfo">
               <h4>

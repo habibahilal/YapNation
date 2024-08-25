@@ -4,6 +4,8 @@ import OnlineBar from "../components/chatComponents/OnlineBar";
 import MyChats from "../components/chatComponents/MyChats";
 import MyAccount from "../components/chatComponents/MyAccount";
 import FriendRequestTriggerProvider from "../context/FriendRequestTriggerProvider";
+import ChatBox from "../components/chatComponents/ChatBox";
+
 const ChatPage = () => {
   return (
     <div>
@@ -16,7 +18,7 @@ const ChatPage = () => {
           <MyChats />
         </div>
         <div className="chatPageRight">
-          <div className="chatBox">chat</div>
+          <ChatBox />
         </div>
       </div>
     </div>
