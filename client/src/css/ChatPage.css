@@ -1,0 +1,15 @@
+.chatContainer {
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  min-height: 100vh !important;
+}
+
+.chatPageLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.chatPageLeft,
+.chatPageRight {
+  height: 100%;
+}

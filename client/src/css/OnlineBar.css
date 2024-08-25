@@ -1,0 +1,80 @@
+.usersSection {
+  background-color: #fefae0;
+  padding: 10px;
+}
+
+.onlineBar_header h3 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.onlineBar_users {
+  display: flex;
+  align-items: center;
+}
+
+.onlineBar_user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.onlineBar_user img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.onlineBar_user span {
+  font-weight: 400;
+  opacity: 0.8;
+  margin-top: 10px;
+}
+
+.searchBar {
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.searchBar input {
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  padding: 10px 10px 10px 40px; /* Adjust padding to make room for the icon */
+  font-size: 16px;
+  background-color: #e0e5b6;
+}
+
+.searchBar img {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+.usersList .user {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.usersList .user img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.usersList .user span {
+  margin-right: 10px;
+}

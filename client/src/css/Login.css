@@ -1,0 +1,134 @@
+.mainContainer {
+  background-color: #ccd5ae;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginContainer {
+  background-color: #fefae0;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.loginContainer h1 {
+  font-family: sans-serif;
+  font-size: xx-large;
+  font-weight: bold;
+  color: #ccd5ae;
+  margin-right: auto;
+}
+
+.loginContainer p {
+  margin-right: auto;
+  font-weight: 100;
+  opacity: 0.8;
+}
+
+.forms {
+  width: 100%;
+  height: 570px;
+  overflow: hidden;
+}
+
+#chk {
+  display: none;
+}
+
+.signup {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+label {
+  color: #ccd5ae;
+  font-weight: 600;
+  font-size: x-large;
+  display: flex;
+  justify-content: center;
+  margin: 40px;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+.authInput {
+  width: 50%;
+  height: 10%;
+  background-color: #e0e5b6;
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.loginButton {
+  width: 50%;
+  background-color: #ccd5ae !important;
+  color: #fefae0;
+  font-weight: 600;
+  font-size: large;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  transition: 0.2s ease-in;
+  padding: 10px !important;
+  justify-content: center;
+  margin: 20px auto;
+  display: block;
+}
+
+.loginButton:hover {
+  background-color: #fefae0 !important;
+  color: #ccd5ae;
+}
+
+.login {
+  height: 530px;
+  background-color: #ccd5ae;
+  border-radius: 60%/10%;
+  transform: translateY(-150px);
+  transition: 0.8s ease-in-out;
+}
+
+.login label {
+  transform: scale(0.7);
+  color: #fefae0;
+}
+
+.login .authInput {
+  background-color: #fefae0;
+}
+
+.login button {
+  background-color: #fefae0 !important;
+  color: #ccd5ae;
+}
+
+.login button:hover {
+  background-color: #ccd5ae !important;
+  color: #fefae0;
+}
+
+#chk:checked ~ .login {
+  transform: translateY(-570px);
+}
+
+#chk:checked ~ .login label {
+  transform: scale(1);
+}
+
+#chk:checked ~ .signup label {
+  transform: scale(0.7);
+}
