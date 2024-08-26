@@ -10,15 +10,71 @@ import {
   ModalFooter,
 } from "@chakra-ui/modal";
 import { ChatState } from "../../context/ChatProvider";
-import { AddIcon, EditIcon } from "@chakra-ui/icons";
+import { AddIcon, EditIcon, CheckIcon } from "@chakra-ui/icons";
 import AddFriendToGroupChat from "./AddFriendToGroupChat";
+import axios from "axios";
 
 const GroupExpandModal = ({ isOpen, onClose }) => {
+  const { user, selectedChat, setSelectedChat, fetchAgain, setFetchAgain } =
+    ChatState();
+
   const [triggerAddMember, setTriggerAddMember] = useState(false);
-  const { selectedChat } = ChatState();
+  const [newGroupChatName, setNewGroupChatName] = useState(
+    selectedChat.chatName
+  );
+  const [triggerGroupChatName, setTriggerGroupChatName] = useState(false);
 
   const switchTrigger = () => {
     setTriggerAddMember(!triggerAddMember);
+  };
+
+  const handleRenameGroupChat = async () => {
+    setTriggerGroupChatName(!triggerGroupChatName);
+
+    if (triggerGroupChatName) {
+      console.log("newGroupChatName", newGroupChatName);
+      try {
+        const config = {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        };
+
+        const res = await axios.put(
+          "http://localhost:5000/api/chats/renameGroupChat",
+          {
+            chatId: selectedChat._id,
+            chatName: newGroupChatName,
+          },
+          config
+        );
+        setNewGroupChatName(res.data.chatName);
+        setSelectedChat(res.data);
+        setFetchAgain(!fetchAgain);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
+
+  const handleRemoveMember = async (userId) => {
+    try {
+      const config = {
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      };
+
+      const res = await axios.put(
+        "http://localhost:5000/api/chats/removeFromGroup",
+        { chatId: selectedChat._id, userId: userId },
+        config
+      );
+      setSelectedChat(res.data);
+      setFetchAgain(!fetchAgain);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -32,31 +88,66 @@ const GroupExpandModal = ({ isOpen, onClose }) => {
             <div className="userExpand">
               <img src={selectedChat.groupAdmin.profilePic} alt="profile" />
               <div className="groupChatName">
-                <h3>{selectedChat.chatName}</h3>
-                <button>
-                  <EditIcon boxSize={3} />{" "}
+                <h3
+                  contentEditable={triggerGroupChatName}
+                  onInput={(e) => {
+                    setNewGroupChatName(e.currentTarget.textContent);
+                  }}
+                >
+                  {newGroupChatName}
+                </h3>
+                <button
+                  onClick={handleRenameGroupChat}
+                  disabled={user._id !== selectedChat.groupAdmin._id}
+                >
+                  {triggerGroupChatName ? (
+                    <CheckIcon boxSize={3} />
+                  ) : (
+                    <EditIcon boxSize={3} />
+                  )}
                 </button>
+                {triggerGroupChatName && <div className="editingLine"></div>}
               </div>
               <div className="groupMembers">
-                <div className="addMember" onClick={switchTrigger}>
-                  <button>
-                    <AddIcon boxSize={3} />{" "}
-                  </button>
-                  <span>Add Member</span>
-                  {triggerAddMember && (
-                    <AddFriendToGroupChat switchTrigger={switchTrigger} />
-                  )}
-                </div>
-                {selectedChat.users.map((user) => (
-                  <div className="groupMember" key={user._id}>
-                    <div className="memberDetails">
-                      <img src={user.profilePic} alt="profile" />
-                      <span>{user.username}</span>
-                    </div>
-                    <button>Remove</button>
+                {user._id === selectedChat.groupAdmin._id && (
+                  <div className="addMember" onClick={switchTrigger}>
+                    <button>
+                      <AddIcon boxSize={3} />{" "}
+                    </button>
+                    <span>Add Member</span>
+                    {triggerAddMember && (
+                      <AddFriendToGroupChat switchTrigger={switchTrigger} />
+                    )}
                   </div>
-                ))}
-              </div>{" "}
+                )}
+                <div className="groupMember" key={selectedChat.groupAdmin._id}>
+                  <div className="memberDetails">
+                    <img
+                      src={selectedChat.groupAdmin.profilePic}
+                      alt="profile"
+                    />
+                    <span>{selectedChat.groupAdmin.username}</span>
+                  </div>
+
+                  <button>Admin</button>
+                </div>
+                {selectedChat.users.map(
+                  (user1) =>
+                    user1._id !== selectedChat.groupAdmin._id && (
+                      <div className="groupMember" key={user1._id}>
+                        <div className="memberDetails">
+                          <img src={user1.profilePic} alt="profile" />
+                          <span>{user1.username}</span>
+                        </div>
+                        {user._id === selectedChat.groupAdmin._id && (
+                          <button onClick={() => handleRemoveMember(user1._id)}>
+                            Remove
+                          </button>
+                        )}
+                      </div>
+                    )
+                )}
+              </div>
             </div>
           </ModalBody>
 

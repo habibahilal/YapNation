@@ -125,7 +125,7 @@ const addToGroup = asyncHandler(async (req, res) => {
   try {
     const chat = await Chat.findOneAndUpdate(
       { _id: req.body.chatId },
-      { $push: { users: req.body.userId } },
+      { $push: { users: { $each: req.body.users } } },
       { new: true }
     )
       .populate("users", "-password")

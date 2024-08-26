@@ -2,6 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+}
+
+.groupChatName h3 {
+  outline: none;
 }
 
 .addMember {
@@ -90,4 +95,10 @@
 
 .groupMembers .groupMember button:hover {
   background-color: #e0e5b6;
+}
+
+.editingLine {
+  height: 2px;
+  width: 100%;
+  background-color: black;
 }
