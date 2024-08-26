@@ -102,3 +102,7 @@
   width: 100%;
   background-color: black;
 }
+
+.leaveButton {
+  margin-left: 5px;
+}

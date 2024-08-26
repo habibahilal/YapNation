@@ -72,6 +72,9 @@ const GroupExpandModal = ({ isOpen, onClose }) => {
       );
       setSelectedChat(res.data);
       setFetchAgain(!fetchAgain);
+      // if (userId === user._id) {
+      //   onClose();
+      // }
     } catch (error) {
       console.log(error);
     }
@@ -130,6 +133,16 @@ const GroupExpandModal = ({ isOpen, onClose }) => {
                   </div>
 
                   <button>Admin</button>
+                  {/* {user._id === selectedChat.groupAdmin._id && (
+                    <button
+                      className="leaveButton"
+                      onClick={() =>
+                        handleRemoveMember(selectedChat.groupAdmin._id)
+                      }
+                    >
+                      Leave
+                    </button>
+                  )} */}
                 </div>
                 {selectedChat.users.map(
                   (user1) =>
