@@ -6,7 +6,7 @@ import { getSender } from "../../config/ChatLogics";
 import GroupChatModal from "../misc/GroupChatModal";
 
 const MyChats = () => {
-  const { user, setSelectedChat, chats, setChats, fetchAgin } = ChatState();
+  const { user, setSelectedChat, chats, setChats, fetchAgain } = ChatState();
 
   const fetchChats = async () => {
     try {
@@ -29,7 +29,7 @@ const MyChats = () => {
   useEffect(() => {
     fetchChats();
     // eslint-disable-next-line
-  }, [user, fetchAgin]);
+  }, [user, fetchAgain]);
 
   return (
     <div className="chats">
