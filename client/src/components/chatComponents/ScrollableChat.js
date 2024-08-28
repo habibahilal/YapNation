@@ -9,9 +9,21 @@ import {
 } from "../../config/ChatLogics";
 import { ChatState } from "../../context/ChatProvider";
 import { Tooltip } from "@chakra-ui/react";
+import Lottie from "react-lottie";
+import animationData from "../../animations/typingIndicator.json";
 
-const ScrollableChat = ({ messages }) => {
+const ScrollableChat = ({ messages, isTyping }) => {
   const { user } = ChatState();
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
   return (
     <ScrollableFeed forceScroll={true}>
       {messages &&
@@ -51,6 +63,11 @@ const ScrollableChat = ({ messages }) => {
             </span>
           </div>
         ))}
+
+      <div className="typingIndicatoDiv">
+        {" "}
+        {isTyping && <Lottie options={defaultOptions} />}
+      </div>
     </ScrollableFeed>
   );
 };

@@ -9,6 +9,7 @@ import { Spinner } from "@chakra-ui/react";
 import axios from "axios";
 import { useToast } from "@chakra-ui/react";
 import ScrollableChat from "./ScrollableChat";
+
 import io from "socket.io-client";
 
 const ENDPOINT = "http://localhost:5000";
@@ -57,8 +58,10 @@ const SingleChat = () => {
     socket.on("connected", () => {
       setSocketConnected(true);
     });
-    socket.on("typing", () => {
-      setIsTyping(true);
+    socket.on("typing", (typingUserId) => {
+      if (typingUserId !== socket.id) {
+        setIsTyping(true);
+      }
     });
     socket.on("stopTyping", () => {
       setIsTyping(false);
@@ -181,16 +184,11 @@ const SingleChat = () => {
           <Spinner size="xl" alignSelf="center" margin="auto" />
         ) : (
           <div className="messages">
-            <ScrollableChat messages={messages} />
+            <ScrollableChat messages={messages} isTyping={isTyping} />
           </div>
         )}
       </div>
       <div className="chatBoxFooter">
-        {isTyping && (
-          <div className="typing">
-            <span>Typing...</span>
-          </div>
-        )}
         <input
           type="text"
           placeholder="Type a message..."
