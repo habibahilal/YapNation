@@ -60,7 +60,16 @@ const MyChats = () => {
                   ? getSender(user, chat.users).username
                   : chat.chatName}
               </h4>
-              <p>{chat.lastMessage}</p>
+              {chat.latestMessage ? (
+                <div className="lastMessage">
+                  <p>
+                    {chat.isGroupChat && (
+                      <span> {chat.latestMessage.sender.username}: </span>
+                    )}
+                    {chat.latestMessage.content}
+                  </p>
+                </div>
+              ) : null}
             </div>
           </div>
         ))}

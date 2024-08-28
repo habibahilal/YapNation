@@ -91,7 +91,7 @@ const FriendsRequest = ({ isOpen, onClose }) => {
     <div>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent background="#E0E5B6">
+        <ModalContent background="#eee">
           <ModalHeader>Friend Requests</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
@@ -105,10 +105,11 @@ const FriendsRequest = ({ isOpen, onClose }) => {
                     <span>{request.username}</span>
                     <div className="requestButtons">
                       <Button
-                        bg="#CCD5AE"
+                        bg="#508D4E"
+                        color={"white"}
                         _hover={{
-                          background: "#FEFAE0",
-                          color: "#CCD5AE",
+                          background: "#1A5319",
+                          color: "white",
                         }}
                         size="xs"
                         mr={2}
@@ -117,10 +118,11 @@ const FriendsRequest = ({ isOpen, onClose }) => {
                         Accept
                       </Button>
                       <Button
-                        bg="#CCD5AE"
+                        bg="#C7253E"
+                        color={"white"}
                         _hover={{
-                          background: "#FEFAE0",
-                          color: "#CCD5AE",
+                          background: "#821131",
+                          color: "white",
                         }}
                         size="xs"
                         onClick={() => handleRejectRequest(request._id)}
@@ -134,17 +136,7 @@ const FriendsRequest = ({ isOpen, onClose }) => {
             </div>
           </ModalBody>
 
-          <ModalFooter>
-            <Button
-              background="#FAEDCE"
-              _hover={{ background: "#FEFAE0" }}
-              transition="background 0.4s ease"
-              mr={3}
-              onClick={onClose}
-            >
-              Close
-            </Button>
-          </ModalFooter>
+          <ModalFooter></ModalFooter>
         </ModalContent>
       </Modal>
     </div>

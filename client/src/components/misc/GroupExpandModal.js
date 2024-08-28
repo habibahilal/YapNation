@@ -14,7 +14,7 @@ import { AddIcon, EditIcon, CheckIcon } from "@chakra-ui/icons";
 import AddFriendToGroupChat from "./AddFriendToGroupChat";
 import axios from "axios";
 
-const GroupExpandModal = ({ isOpen, onClose }) => {
+const GroupExpandModal = ({ isOpen, onClose, fetchMessages }) => {
   const { user, selectedChat, setSelectedChat, fetchAgain, setFetchAgain } =
     ChatState();
 
@@ -72,6 +72,7 @@ const GroupExpandModal = ({ isOpen, onClose }) => {
       );
       setSelectedChat(res.data);
       setFetchAgain(!fetchAgain);
+      fetchMessages();
       // if (userId === user._id) {
       //   onClose();
       // }

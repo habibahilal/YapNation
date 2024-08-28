@@ -37,8 +37,26 @@
 
 .searchResults .searchResult span {
   font-weight: 400;
-  opacity: 0.8;
+  color: #4d426d;
   margin-right: 10px;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  outline: none;
+  border: 2px solid #4d426d;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #9187ab;
+  border: 2px solid #4d426d;
 }
 
 .searchResults p {

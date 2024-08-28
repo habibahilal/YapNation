@@ -1,7 +1,9 @@
 .chats {
   padding: 10px;
-  background-color: #fefae0;
+  background-color: #4d426d;
+  color: white;
   flex-grow: 1;
+  margin: 10px;
 }
 
 .chatsHeader {
@@ -17,7 +19,8 @@
 }
 
 .chatsHeader button {
-  background-color: #ccd5ae;
+  background-color: #eee;
+  color: #4d426d;
   border: none;
   padding: 5px 10px;
   border-radius: 5px;
@@ -28,7 +31,8 @@
 }
 
 .chatsHeader button:hover {
-  background-color: #e0e5b6;
+  background-color: #4d426d;
+  color: white;
 }
 
 .chatsList {
@@ -56,6 +60,9 @@
 }
 
 .chatInfo p {
-  font-weight: 400;
-  opacity: 0.8;
+  opacity: 0.9;
+}
+
+.chatInfo .lastMessage span {
+  font-weight: 700;
 }
