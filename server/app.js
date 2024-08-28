@@ -71,4 +71,9 @@ io.on("connection", (socket) => {
   socket.on("stopTyping", (room) => {
     socket.in(room).emit("stopTyping");
   });
+
+  socket.off("setup", () => {
+    console.log("disconnected");
+    socket.leave(userData._id);
+  });
 });
