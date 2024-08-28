@@ -114,7 +114,7 @@ const GroupChatModal = ({ children }) => {
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent background="#E0E5B6">
+        <ModalContent background="#eee">
           <ModalHeader>Create Group Chat</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
@@ -161,8 +161,9 @@ const GroupChatModal = ({ children }) => {
               )}
             </div>
             <Button
-              background="#FAEDCE"
-              _hover={{ background: "#FEFAE0" }}
+              background="#4d426d"
+              color={"white"}
+              _hover={{ background: "#eee", color: "#4d426d" }}
               transition="background 0.4s ease"
               onClick={handleCreateGroupChat}
             >

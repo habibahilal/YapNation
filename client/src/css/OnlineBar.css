@@ -1,6 +1,8 @@
 .usersSection {
-  background-color: #fefae0;
+  background-color: #4d426d;
+  color: white;
   padding: 10px;
+  margin: 10px;
 }
 
 .onlineBar_header h3 {
@@ -32,7 +34,6 @@
 
 .onlineBar_user span {
   font-weight: 400;
-  opacity: 0.8;
   margin-top: 10px;
 }
 
@@ -48,7 +49,9 @@
   border: none;
   padding: 10px 10px 10px 40px; /* Adjust padding to make room for the icon */
   font-size: 16px;
-  background-color: #e0e5b6;
+  background-color: white;
+  color: black;
+  outline: none;
 }
 
 .searchBar img {

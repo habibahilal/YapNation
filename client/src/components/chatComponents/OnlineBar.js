@@ -154,10 +154,10 @@ const OnlineBar = () => {
               <img src={result.profilePic} alt="profile" />
               <span>{result.username}</span>
               <Button
-                bg="#CCD5AE"
+                bg="white"
                 _hover={{
-                  background: "#FEFAE0",
-                  color: "#CCD5AE",
+                  background: "#9187ab",
+                  color: "white",
                 }}
                 size="xs"
                 isDisabled={

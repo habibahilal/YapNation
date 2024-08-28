@@ -46,19 +46,19 @@ const MyAccount = () => {
               />
             }
             w="30px"
-            bg="#CCD5AE"
+            bg="#eeeeee"
             _hover={{
-              background: "#E0E5B6",
+              background: "#9187ab",
             }}
             transition="background 0.4s ease"
             _active={{
-              background: "#E0E5B6",
+              background: "#9187ab",
             }}
           />
-          <MenuList bg="#CCD5AE">
+          <MenuList bg="#9187ab">
             <MenuItem
-              bg="#CCD5AE"
-              _hover={{ background: "#E0E5B6" }}
+              bg="#eeeeee"
+              _hover={{ background: "#9187ab" }}
               transition="background 0.4s ease"
               onClick={onOpen}
             >
@@ -67,8 +67,8 @@ const MyAccount = () => {
             </MenuItem>
             <MenuItem
               onClick={logoutHandler}
-              bg="#CCD5AE"
-              _hover={{ background: "#E0E5B6" }}
+              bg="#eeeeee"
+              _hover={{ background: "#9187ab" }}
               transition="background 0.4s ease"
             >
               Logout

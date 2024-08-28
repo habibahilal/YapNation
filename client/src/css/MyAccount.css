@@ -1,9 +1,10 @@
 .account {
   padding: 10px;
-  background-color: #fefae0;
+  background-color: #eeeeee;
   display: grid;
   grid-template-columns: 100px 1fr 1fr;
   align-items: center;
+  border-bottom: 2px solid #4d426d;
 }
 
 .account_img img {
