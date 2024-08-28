@@ -60,6 +60,7 @@ const AddFriendToGroupChat = ({ switchTrigger }) => {
 
   useEffect(() => {
     onOpen();
+    // eslint-disable-next-line
   }, []);
 
   const handleClose = () => {

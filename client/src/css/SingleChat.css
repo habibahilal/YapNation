@@ -3,8 +3,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  background-color: #fefae0;
-  border-bottom: 2px solid #ccd5ae;
+  background-color: #d1d8c5;
+  border-bottom: 2px solid #615efc;
 }
 
 .chatBoxHeader .headerInfo {
@@ -27,4 +27,68 @@
 
 .chatBoxHeader .headerButton {
   padding: 0 50px;
+}
+
+.chatBoxBody {
+  background-color: #eeeeee;
+  margin: 10px;
+  padding: 10px;
+  height: 100%;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.chatBoxFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #615efc;
+}
+
+.chatBoxFooter input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  margin-right: 5px;
+}
+
+.chatBoxFooter button {
+  background-color: #eeeeee;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  max-height: calc(100vh - 250px);
+}
+
+.chatBoxMessage {
+  align-items: center;
+}
+
+.chatBoxMessage img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.chatBoxMessage span {
+  border-radius: 20px;
+  padding: 5px 15px;
+  max-width: 75%;
 }

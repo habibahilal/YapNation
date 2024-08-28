@@ -13,7 +13,6 @@ const OnlineBar = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [friends, setFriends] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [loadingChat, setLoadingChat] = useState(false);
   const { friendRequestTrigger, setFriendRequestTrigger } =
     FriendRequestTriggerState();
 
@@ -108,7 +107,6 @@ const OnlineBar = () => {
 
   const accessChat = async (userId) => {
     try {
-      setLoadingChat(true);
       const config = {
         headers: {
           Authorization: `Bearer ${user.token}`,
@@ -126,10 +124,8 @@ const OnlineBar = () => {
       }
 
       setSelectedChat(res.data);
-      setLoadingChat(false);
     } catch (error) {
       console.log(error);
-      setLoadingChat(false);
     }
   };
 

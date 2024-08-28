@@ -19,7 +19,7 @@ app.use(cors());
 
 const port = process.env.PORT;
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`Server is running on port ${port}`.yellow.bold);
 });
 
@@ -33,3 +33,42 @@ app.use("/api/messages", messageRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
+
+// socket.io
+
+const io = require("socket.io")(server, {
+  pingTimeout: 60000,
+  cors: {
+    origin: "http://localhost:3000",
+  },
+});
+
+io.on("connection", (socket) => {
+  socket.on("setup", (userData) => {
+    socket.join(userData._id);
+    socket.emit("connected");
+  });
+
+  socket.on("joinRoom", (chatId) => {
+    socket.join(chatId);
+  });
+
+  socket.on("sendMessage", (message) => {
+    var chat = message.chat;
+
+    if (!chat.users) return console.log("Chat.users not defined");
+
+    chat.users.forEach((user) => {
+      if (user._id === message.sender._id) return;
+      socket.in(user._id).emit("messageReceived", message);
+    });
+  });
+
+  socket.on("typing", (room) => {
+    socket.in(room).emit("typing");
+  });
+
+  socket.on("stopTyping", (room) => {
+    socket.in(room).emit("stopTyping");
+  });
+});
