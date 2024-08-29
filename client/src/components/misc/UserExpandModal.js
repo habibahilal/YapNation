@@ -19,7 +19,7 @@ const UserExpandModal = ({ isOpen, onClose }) => {
     <div>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent background="#E0E5B6">
+        <ModalContent background="#4d426d">
           <ModalHeader></ModalHeader>
           <ModalCloseButton />
           <ModalBody>

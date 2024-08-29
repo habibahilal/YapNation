@@ -20,7 +20,7 @@
 }
 
 .addMember:hover {
-  background-color: #e0e5b6;
+  background-color: #9187ab;
 }
 
 .addMember > button {
@@ -33,7 +33,7 @@
   width: 30px;
   height: 30px;
   padding: 10px;
-  background-color: #ccd5ae;
+  background-color: #4d426d;
   cursor: pointer;
   outline: none;
   border-radius: 50%;
@@ -45,7 +45,7 @@
 }
 
 .groupChatName button:hover {
-  background-color: #e0e5b6;
+  background-color: #9187ab;
 }
 .groupMembers {
   display: flex;
@@ -85,7 +85,8 @@
   padding: 2px 10px;
   border: none;
   border-radius: 5px;
-  background-color: #ccd5ae;
+  background-color: #4d426d;
+  color: white;
   cursor: pointer;
   outline: none;
   transition: background-color 0.4s;
@@ -94,7 +95,7 @@
 }
 
 .groupMembers .groupMember button:hover {
-  background-color: #e0e5b6;
+  background-color: #9187ab;
 }
 
 .editingLine {

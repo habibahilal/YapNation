@@ -38,6 +38,9 @@
 .chatsList {
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  max-height: calc(100vh - 450px);
 }
 
 .chat {
