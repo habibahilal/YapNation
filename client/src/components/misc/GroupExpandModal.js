@@ -32,7 +32,6 @@ const GroupExpandModal = ({ isOpen, onClose, fetchMessages }) => {
     setTriggerGroupChatName(!triggerGroupChatName);
 
     if (triggerGroupChatName) {
-      console.log("newGroupChatName", newGroupChatName);
       try {
         const config = {
           headers: {
@@ -48,8 +47,8 @@ const GroupExpandModal = ({ isOpen, onClose, fetchMessages }) => {
           },
           config
         );
-        setNewGroupChatName(res.data.chatName);
         setSelectedChat(res.data);
+        setNewGroupChatName(selectedChat.chatName);
         setFetchAgain(!fetchAgain);
       } catch (error) {
         console.log(error);
@@ -98,7 +97,7 @@ const GroupExpandModal = ({ isOpen, onClose, fetchMessages }) => {
                     setNewGroupChatName(e.currentTarget.textContent);
                   }}
                 >
-                  {newGroupChatName}
+                  {selectedChat.chatName}
                 </h3>
                 <button
                   onClick={handleRenameGroupChat}

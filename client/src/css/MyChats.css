@@ -64,6 +64,9 @@
 
 .chatInfo p {
   opacity: 0.9;
+  overflow-x: hidden;
+  white-space: nowrap;
+  width: 100%;
 }
 
 .chatInfo .lastMessage span {
