@@ -33,7 +33,7 @@ YapNation is a real-time chatting application that allows users to connect, comm
 
 - Authentication ![yapnation-auth-preview](https://github.com/user-attachments/assets/197e1896-0320-432c-9430-d6f50b925221)
 - General Features ![yapNation-features](https://github.com/user-attachments/assets/fa7d88fb-3deb-44c5-8fda-d96a93d7d4df)
-
+- Real-time chatting ![yapNation-realtime](https://github.com/user-attachments/assets/6ae558e5-c535-48d0-bfd8-935a86d398b4)
 
 
 
