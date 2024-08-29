@@ -16,8 +16,7 @@ const ENDPOINT = "http://localhost:5000";
 var socket, selectedChatCompare;
 
 const SingleChat = () => {
-  const { user, selectedChat, setSelectedChat, fetchAgain, setFetchAgain } =
-    ChatState();
+  const { user, selectedChat, fetchAgain, setFetchAgain } = ChatState();
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
   const [newMessage, setNewMessage] = useState("");
@@ -66,11 +65,13 @@ const SingleChat = () => {
     socket.on("stopTyping", () => {
       setIsTyping(false);
     });
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
     fetchMessages();
     selectedChatCompare = selectedChat;
+    // eslint-disable-next-line
   }, [selectedChat]);
 
   useEffect(() => {

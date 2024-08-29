@@ -18,9 +18,9 @@ const ChatBox = () => {
             <div className="logo">
               <h1>YapNation</h1>
               <img
-                width="96"
-                height="96"
-                src="/chat_logo.png"
+                width="64"
+                height="64"
+                src="/chat-logo.png"
                 alt="chat logo"
               />
             </div>

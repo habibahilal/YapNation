@@ -85,7 +85,7 @@ const GroupExpandModal = ({ isOpen, onClose, fetchMessages }) => {
     <div>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent background="#E0E5B6">
+        <ModalContent background="#4d426d">
           <ModalHeader></ModalHeader>
           <ModalCloseButton />
           <ModalBody>
@@ -105,9 +105,9 @@ const GroupExpandModal = ({ isOpen, onClose, fetchMessages }) => {
                   disabled={user._id !== selectedChat.groupAdmin._id}
                 >
                   {triggerGroupChatName ? (
-                    <CheckIcon boxSize={3} />
+                    <CheckIcon color="gray.100" boxSize={3} />
                   ) : (
-                    <EditIcon boxSize={3} />
+                    <EditIcon color="gray.100" boxSize={3} />
                   )}
                 </button>
                 {triggerGroupChatName && <div className="editingLine"></div>}
@@ -116,7 +116,7 @@ const GroupExpandModal = ({ isOpen, onClose, fetchMessages }) => {
                 {user._id === selectedChat.groupAdmin._id && (
                   <div className="addMember" onClick={switchTrigger}>
                     <button>
-                      <AddIcon boxSize={3} />{" "}
+                      <AddIcon color="gray.100" boxSize={3} />{" "}
                     </button>
                     <span>Add Member</span>
                     {triggerAddMember && (

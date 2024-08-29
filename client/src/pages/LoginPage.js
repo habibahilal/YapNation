@@ -18,6 +18,12 @@ const LoginPage = () => {
   return (
     <div>
       <div className="mainContainer">
+        <div className="logoContainer">
+          <div className="logo">
+            <h1>YapNation</h1>
+            <img width="64" height="64" src="/chat-logo.png" alt="chat logo" />
+          </div>
+        </div>
         <div className="loginContainer">
           <h1> Ready to Yap? </h1>
           <div className="forms">
