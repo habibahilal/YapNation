@@ -1,6 +1,6 @@
 # YapNation
 
-YapNation is a real-time chatting application that allows users to connect, communicate, and manage group chats with their friends. The app includes features for searching and adding friends, chatting with friends, creating and managing group chats, and sending real-time messages. Authentication is handled via JWT tokens, ensuring secure access to the app's features.
+YapNation is a real-time chatting application that allows users to connect, communicate, and manage group chats with their friends. The app includes features for searching and adding users, chatting with friends, creating and managing group chats, and sending real-time messages. Authentication is handled via JWT tokens, ensuring secure access to the app's features.
 
 ## Features
 
