@@ -23,7 +23,7 @@ YapNation is a real-time chatting application that allows users to connect, comm
 
 ## Technologies Used
 
-- **Frontend**:  React, Chakra UI, Lottie
+- **Frontend**:  React
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB, Mongoose
 - **Real-time Communication**: `socket.io`
